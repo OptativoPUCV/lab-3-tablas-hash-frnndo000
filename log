@@ -8,3 +8,9 @@ hashmap.c:63:12: error: 'HashMap {aka struct HashMap}' has no member named 'buck
          map->bucket[i] = NULL ;
             ^~
 eeef3b7
+Wed, Apr 16, 2025  2:46:17 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+83eab60
