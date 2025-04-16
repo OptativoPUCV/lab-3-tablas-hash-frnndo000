@@ -1,0 +1,10 @@
+Wed, Apr 16, 2025  2:45:59 PM: 
+ hashmap.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'createMap':
+hashmap.c:63:12: error: 'HashMap {aka struct HashMap}' has no member named 'bucket'; did you mean 'buckets'?
+         map->bucket[i] = NULL ;
+            ^~
+eeef3b7
