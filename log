@@ -77,3 +77,9 @@ hashmap.c:90:10: error: unused variable 'posOriginal' [-Werror=unused-variable]
           ^~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 3e65c35
+Sat, Apr 19, 2025  5:28:06 PM: 
+ hashmap.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ tests:  8|3
+total_score: 40/70
+68bd9a8
