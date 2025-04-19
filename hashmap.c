@@ -47,7 +47,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     do {
         if (map->buckets[posicion] == NULL || 
-                    (map->buckets[posicion] != NULL || 
+                    (map->buckets[posicion] != NULL && 
                     map->buckets[posicion]->key == NULL)) \
         {
             Pair* nuevo = createPair(strdup(key), value) ;
@@ -58,7 +58,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         }
 
         if (is_equal(map->buckets[posicion]->key, key)) return ;
-        
+
 
     } while (posicion != posOriginal) ;
 
