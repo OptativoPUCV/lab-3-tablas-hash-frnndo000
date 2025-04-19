@@ -103,7 +103,7 @@ void eraseMap(HashMap * map,  char * key) {
                 map->size-- ;
                 return ;
             }
-        if (posicion == posOriginal) return ;
+        if (posicion == posOriginal) break ;
         }
     }
 
