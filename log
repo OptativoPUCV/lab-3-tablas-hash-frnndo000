@@ -53,3 +53,16 @@ hashmap.c:90:10: error: unused variable 'posOriginal' [-Werror=unused-variable]
           ^~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 7a77386
+Sat, Apr 19, 2025  5:23:21 PM: 
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'eraseMap':
+hashmap.c:92:38: error: 'pos' undeclared (first use in this function)
+     Pair* hashElement = map->buckets[pos] ;
+                                      ^~~
+hashmap.c:92:38: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:90:10: error: unused variable 'posOriginal' [-Werror=unused-variable]
+     long posOriginal = posicion ;
+          ^~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+28c2434
