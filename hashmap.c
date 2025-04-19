@@ -106,6 +106,8 @@ void eraseMap(HashMap * map,  char * key) {
         if (posicion == posOriginal) return ;
         }
     }
+
+    return ;
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
