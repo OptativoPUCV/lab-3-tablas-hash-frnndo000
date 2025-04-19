@@ -134,8 +134,26 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
+    long index = 0 ;
+    Pair* temp = map->buckets[index] ;
 
-    return NULL;
+    if (temp != NULL && temp->key != NULL && temp->value != NULL) {
+        map->current = index ;
+        return temp ;
+    } else {
+        while(1) {
+            index = (index + 1) % map->capacity ;
+            Pair* element = map->buckets[index] ;
+
+            if (element != NULL && element->key != NULL && element->value != NULL) {
+                map->current = index ;
+                return element ;
+            }
+            if (index == 0) break ;
+        }
+    }
+
+    return NULL ;
 }
 
 Pair * nextMap(HashMap * map) {
