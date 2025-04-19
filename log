@@ -66,3 +66,14 @@ hashmap.c:90:10: error: unused variable 'posOriginal' [-Werror=unused-variable]
           ^~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 28c2434
+Sat, Apr 19, 2025  5:27:45 PM: 
+ hashmap.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'eraseMap':
+hashmap.c:90:10: error: unused variable 'posOriginal' [-Werror=unused-variable]
+     long posOriginal = posicion ;
+          ^~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+3e65c35
