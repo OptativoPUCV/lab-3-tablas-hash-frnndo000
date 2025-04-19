@@ -178,9 +178,19 @@ Pair * nextMap(HashMap * map) {
     if (map == NULL || map->size == 0) return NULL ;
 
     long index = (map->current + 1) % map->capacity ;
-    long indexOriginal = index ;
+    //long indexOriginal = index ;
 
-    while (map->buckets[index] == NULL || map->buckets[index]->key == NULL) {
+    for (long i = 0; i < map->capacity; i++) {
+        Pair* element = map->buckets[index];
+
+        if (element != NULL && element->key != NULL && element->value != NULL) {
+            map->current = index;
+            return element;
+        }
+
+        index = (index + 1) % map->capacity;
+    }
+    /* while (map->buckets[index] == NULL || map->buckets[index]->key == NULL) {
         index = (index + 1) % map->capacity ;
         if (index == indexOriginal) break ;
     }
@@ -188,7 +198,8 @@ Pair * nextMap(HashMap * map) {
     if (map->buckets[index] != NULL && map->buckets[index]->key != NULL) {
         map->current = index ;
         return map->buckets[index] ;
-    }
+    }*/
+    
 
     return NULL ;
 }
