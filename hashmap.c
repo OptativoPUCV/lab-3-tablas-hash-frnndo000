@@ -48,7 +48,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     do {
         if (map->buckets[posicion] == NULL || 
                     (map->buckets[posicion] != NULL && 
-                    map->buckets[posicion]->key == NULL)) \
+                    map->buckets[posicion]->key == NULL))
         {
             Pair* nuevo = createPair(strdup(key), value) ;
             map->buckets[posicion] = nuevo ;
@@ -65,9 +65,26 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+    //enlarge_called = 1; //no borrar (testing purposes)
 
+    Pair ** old_buckets = map->buckets ;
+    map->capacity *= 2 ;
 
+    map->buckets = (Pair **) malloc(sizeof(Pair *) * map->capacity) ;
+    
+    for (long i = 0; i < map->capacity; i++) {
+        map->buckets[i] = NULL ;
+    }
+
+    map->size = 0 ;
+
+    for (long i = 0 ; i < map->capacity / 2 ; i++) {
+        if (old_buckets[i] != NULL && old_buckets[i]->key != NULL) {
+            insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
+        }
+    }
+
+    free(old_buckets) ;
 }
 
 
