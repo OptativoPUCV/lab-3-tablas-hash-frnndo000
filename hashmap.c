@@ -180,17 +180,14 @@ Pair * nextMap(HashMap * map) {
     long index = (map->current + 1) % map->capacity ;
     long indexOriginal = index ;
 
-    while (1) {
-        Pair* element = map->buckets[index] ;
-
-        if (element != NULL && element->key != NULL && element->value != NULL) {
-            map->current = index ;
-            return element ;
-        }
-
+    while (map->buckets[index] == NULL || map->buckets[index]->key == NULL) {
         index = (index + 1) % map->capacity ;
-
         if (index == indexOriginal) break ;
+    }
+
+    if (map->buckets[index] != NULL && map->buckets[index]->key != NULL) {
+        map->current = index ;
+        return map->buckets[index] ;
     }
 
     return NULL ;
