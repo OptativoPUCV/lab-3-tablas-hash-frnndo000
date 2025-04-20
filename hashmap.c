@@ -175,7 +175,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    if (map == NULL || map->size == 0) return NULL ;
+    if (map == NULL || map->size == 0 || map->buckets == NULL) return NULL ;
 
     long inicio = (map->current + 1) % map->capacity ;
     long index = inicio ;
